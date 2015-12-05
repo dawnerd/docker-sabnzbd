@@ -1,5 +1,5 @@
 FROM linuxserver/baseimage
-MAINTAINER Sparklyballs <sparklyballs@linuxserver.io>
+MAINTAINER dawnerd <troy@somany.us>
 
 ENV APTLIST="sabnzbdplus \
 sabnzbdplus-theme-mobile \
@@ -34,6 +34,6 @@ RUN chmod -v +x /etc/service/*/run && chmod -v +x /etc/my_init.d/*.sh
 VOLUME /config /downloads /incomplete-downloads
 
 # expose ports
-EXPOSE 8080 9090
+EXPOSE 8085 9095
 
 
