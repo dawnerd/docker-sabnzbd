@@ -1,8 +1,4 @@
-![http://linuxserver.io](http://www.linuxserver.io/wp-content/uploads/2015/06/linuxserver_medium.png)
-
-The [LinuxServer.io](https://www.linuxserver.io/) team brings you another quality container release featuring auto-update on startup, easy user mapping and community support. Be sure to checkout our [forums](https://forum.linuxserver.io/index.php) or for real-time support our [IRC](https://www.linuxserver.io/index.php/irc/) on freenode at `#linuxserver.io`.
-
-# linuxserver/sabnzbd
+# dawnerd/sabnzbd
 
 SABnzbd makes Usenet as simple and streamlined as possible by automating everything we can. All you have to do is add an .nzb. SABnzbd takes over from there, where it will be automatically downloaded, verified, repaired, extracted and filed away with zero human interaction. 
 This container includes par2 multicore.  http://sabnzbd.org/
@@ -10,13 +6,13 @@ This container includes par2 multicore.  http://sabnzbd.org/
 ## Usage
 
 ```
-docker create --name=sabnzbd -v /etc/localtime:/etc/localtime:ro -v <path to data>:/config -v <path to downloads>:/downloads -v <path to incomplete downloads>:/incomplete-downloads -e PGID=<gid> -e PUID=<uid>  -p 8080:8080 -p 9090:9090 linuxserver/sabnzbd
+docker create --name=sabnzbd -v /etc/localtime:/etc/localtime:ro -v <path to data>:/config -v <path to downloads>:/downloads -v <path to incomplete downloads>:/incomplete-downloads -e PGID=<gid> -e PUID=<uid>  -p 8085:8085 -p 9095:9095 linuxserver/sabnzbd
 ```
 
 **Parameters**
 
-* `-p 8080` - http port for the webui
-* `-p 9090` - https port for the webui *see note below*
+* `-p 8085` - http port for the webui
+* `-p 9095` - https port for the webui *see note below*
 * `-v /etc/localhost` for timesync - *optional*
 * `-v /config` - local path for sabnzbd config files
 * `-v /downloads` local path for finished downloads
@@ -34,7 +30,7 @@ Part of what makes our containers work so well is by allowing you to specify you
 
 ## Setting up the application 
 Initial setup is done from the htpp port.
-Https access for sabnzbd needs to be enabled in either the intial setup wizard or in the configure settings of the webui, be sure to use 9090 as port for https.
+Https access for sabnzbd needs to be enabled in either the intial setup wizard or in the configure settings of the webui, be sure to use 9095 as port for https.
 See here for info on some of the switch settings for sabnzbd http://wiki.sabnzbd.org/configure-switches
 
 
@@ -46,7 +42,4 @@ See here for info on some of the switch settings for sabnzbd http://wiki.sabnzbd
 
 ## Credits
 https://github.com/jcfp/debpkg-par2tbb for the par2 multicore used in this container.
-
-## Versions
-
-+ **21.08.2015:** Intial Release. 
+https://github.com/linuxserver/docker-sabnzbd for initial release
